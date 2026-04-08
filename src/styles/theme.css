@@ -1,0 +1,191 @@
+/* ============================================================
+   CRA MALAWI BRAND THEME
+   Primary: Deep Forest Green  #1B4D2E
+   Primary Mid: #2D6A4F
+   Primary Light: #3A7D44
+   Gold Accent: #C9A84C
+   Gold Dark: #A8892A
+   Background: #F7F9F6 (very light green-tinted white)
+   ============================================================ */
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+
+  /* CRA Brand Colors */
+  --cra-green-dark:   #1B4D2E;
+  --cra-green:        #2D6A4F;
+  --cra-green-mid:    #3A7D44;
+  --cra-green-light:  #EBF4EE;
+  --cra-gold:         #C9A84C;
+  --cra-gold-dark:    #A8892A;
+  --cra-gold-light:   #F5EDD6;
+
+  --background: #F7F9F6;
+  --foreground: #0F1F14;
+  --card: #ffffff;
+  --card-foreground: #0F1F14;
+  --popover: #ffffff;
+  --popover-foreground: #0F1F14;
+
+  /* Primary = CRA Deep Green */
+  --primary: #1B4D2E;
+  --primary-foreground: #ffffff;
+
+  /* Secondary = CRA Gold */
+  --secondary: #F5EDD6;
+  --secondary-foreground: #1B4D2E;
+
+  --muted: #EBF4EE;
+  --muted-foreground: #4A6554;
+  --accent: #F5EDD6;
+  --accent-foreground: #1B4D2E;
+
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+
+  --border: rgba(27, 77, 46, 0.15);
+  --input: transparent;
+  --input-background: #EBF4EE;
+  --switch-background: #8AAF96;
+
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+
+  --ring: #2D6A4F;
+
+  /* Charts — use CRA palette */
+  --chart-1: #1B4D2E;
+  --chart-2: #C9A84C;
+  --chart-3: #3A7D44;
+  --chart-4: #A8892A;
+  --chart-5: #2D6A4F;
+
+  --radius: 0.625rem;
+
+  --sidebar: #1B4D2E;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #C9A84C;
+  --sidebar-primary-foreground: #1B4D2E;
+  --sidebar-accent: #2D6A4F;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255,255,255,0.1);
+  --sidebar-ring: #C9A84C;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  html { font-size: var(--font-size); }
+
+  h1 { font-size: var(--text-2xl); font-weight: var(--font-weight-medium); line-height: 1.5; }
+  h2 { font-size: var(--text-xl);  font-weight: var(--font-weight-medium); line-height: 1.5; }
+  h3 { font-size: var(--text-lg);  font-weight: var(--font-weight-medium); line-height: 1.5; }
+  h4 { font-size: var(--text-base);font-weight: var(--font-weight-medium); line-height: 1.5; }
+
+  label  { font-size: var(--text-base); font-weight: var(--font-weight-medium); line-height: 1.5; }
+  button { font-size: var(--text-base); font-weight: var(--font-weight-medium); line-height: 1.5; }
+  input  { font-size: var(--text-base); font-weight: var(--font-weight-normal);  line-height: 1.5; }
+}
+
+/* ============================================================
+   CRA BRAND UTILITY OVERRIDES
+   Map Tailwind green-* shades used in the app to CRA colors
+   ============================================================ */
+
+/* bg-green-* → CRA greens */
+.bg-green-50  { background-color: #EBF4EE !important; }
+.bg-green-100 { background-color: #D5EBD9 !important; }
+.bg-green-200 { background-color: #AACFB5 !important; }
+.bg-green-600 { background-color: #2D6A4F !important; }
+.bg-green-700 { background-color: #1B4D2E !important; }
+.bg-green-800 { background-color: #163D25 !important; }
+.bg-green-900 { background-color: #0F2A19 !important; }
+.bg-green-950 { background-color: #0A1F12 !important; }
+
+/* text-green-* → CRA greens */
+.text-green-50  { color: #EBF4EE !important; }
+.text-green-100 { color: #D5EBD9 !important; }
+.text-green-600 { color: #2D6A4F !important; }
+.text-green-700 { color: #1B4D2E !important; }
+.text-green-800 { color: #163D25 !important; }
+.text-green-900 { color: #0F2A19 !important; }
+
+/* border-green-* */
+.border-green-600 { border-color: #2D6A4F !important; }
+.border-green-700 { border-color: #1B4D2E !important; }
+
+/* hover variants */
+.hover\:bg-green-50:hover  { background-color: #EBF4EE !important; }
+.hover\:bg-green-600:hover { background-color: #2D6A4F !important; }
+.hover\:bg-green-700:hover { background-color: #1B4D2E !important; }
+.hover\:bg-green-800:hover { background-color: #163D25 !important; }
+.hover\:bg-green-950:hover { background-color: #0A1F12 !important; }
+.hover\:text-green-700:hover { color: #1B4D2E !important; }
+.hover\:border-green-400:hover { border-color: #3A7D44 !important; }
+.hover\:underline { text-decoration-color: #1B4D2E; }
+
+/* Gradient from/to green */
+.from-green-50  { --tw-gradient-from: #EBF4EE; }
+.from-green-700 { --tw-gradient-from: #1B4D2E; }
+.from-green-900 { --tw-gradient-from: #0F2A19; }
+.to-green-700   { --tw-gradient-to: #1B4D2E; }
+.to-green-900   { --tw-gradient-to: #0F2A19; }
+.to-blue-50     { --tw-gradient-to: #EBF4EE; } /* register page bg fix */
+
+/* Animate spin (loading) */
+.border-green-600.animate-spin { border-color: #2D6A4F !important; }
+
+/* CRA Gold accent classes (for use in JSX) */
+.bg-cra-gold        { background-color: #C9A84C; }
+.text-cra-gold      { color: #C9A84C; }
+.border-cra-gold    { border-color: #C9A84C; }
+.hover\:bg-cra-gold-dark:hover { background-color: #A8892A; }
