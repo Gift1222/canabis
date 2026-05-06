@@ -246,9 +246,11 @@ export default function RootLayout() {
             <div>
               <div className="font-semibold mb-3 text-sm" style={{ color: '#C9A84C' }}>Contact</div>
               <div className="space-y-1 text-sm" style={{ color: 'rgba(255,255,255,0.6)' }}>
-                <div>dg@cra.mw · info@cra.mw</div>
-                <div>+265 983 436 246</div>
-                <div>Capital City, Lilongwe</div>
+                <div>The Director General,</div>
+                <div>Cannabis Regulatory Authority</div>
+                <div>Post Office Box 30075,</div>
+                <div>Lilongwe 3,</div>
+                <div>Malawi.</div>
               </div>
             </div>
             <div>
