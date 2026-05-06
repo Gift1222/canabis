@@ -3,7 +3,7 @@ import { Shield, Target, Users, Award } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
 export default function AboutPage() {
-  const buildingImageUrl = "https://res-console.cloudinary.com/dpeudh5sr/thumbnails/transform/v1/image/upload/Y19maWxsLGhfMjAwLHdfMjAw/v1/Q0xTX2R3ZGJpcw==/template_primary=rb-4.1.0&q=80&w=1080";
+  const buildingImageUrl = "https://res-console.cloudinary.com/dpeudh5sr/thumbnails/transform/v1/image/upload/Y19maWxsLGhfMjAwLHdfMjAw/v1/Q0xTX2R3ZGJpcw==/template_primary";
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
