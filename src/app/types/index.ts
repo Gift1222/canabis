@@ -1,8 +1,6 @@
 export type UserRole = 'applicant' | 'admin' | 'inspector';
 
 export type LicenseType =
-  // Legacy keys (used by existing mock data)
-  | 'cultivation' | 'processing' | 'research' | 'transportation' | 'export' | 'retail'
   // Licence sub-types
   | 'cultivate-sale-medicinal' | 'cultivate-sale-hemp'
   | 'process-medicinal'        | 'process-hemp'

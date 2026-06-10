@@ -29,7 +29,7 @@ export const mockApplications: LicenseApplication[] = [
     id: 'APP-2026-001',
     applicantId: 'user-001',
     applicantName: 'John Banda',
-    licenseType: 'cultivation',
+    licenseType: 'cultivate-sale-medicinal',
     status: 'under_review',
     submittedDate: '2026-03-15',
     businessName: 'Malawi Green Farms Ltd',
@@ -69,7 +69,7 @@ export const mockApplications: LicenseApplication[] = [
     id: 'APP-2026-002',
     applicantId: 'user-002',
     applicantName: 'Sarah Mwale',
-    licenseType: 'processing',
+    licenseType: 'process-medicinal',
     status: 'approved',
     submittedDate: '2026-02-20',
     reviewedDate: '2026-03-01',
@@ -107,7 +107,7 @@ export const mockApplications: LicenseApplication[] = [
     id: 'APP-2026-003',
     applicantId: 'user-003',
     applicantName: 'James Kamanga',
-    licenseType: 'research',
+    licenseType: 'medical-research-medicinal',
     status: 'submitted',
     submittedDate: '2026-03-28',
     businessName: 'Malawi University Research Institute',
@@ -139,7 +139,7 @@ export const mockApplications: LicenseApplication[] = [
     id: 'APP-2026-004',
     applicantId: 'user-004',
     applicantName: 'Peter Nkhoma',
-    licenseType: 'export',
+    licenseType: 'import-export',
     status: 'pending_payment',
     submittedDate: '2026-03-10',
     reviewedDate: '2026-03-20',
@@ -236,15 +236,7 @@ export const mockStats: DashboardStats = {
 };
 
 export const licenseTypeInfo = {
-  // ── Legacy keys (kept for existing mock application data) ──────────────────
-  cultivation:   { name: 'Cultivation Licence', description: 'For growing cannabis plants for medical or industrial purposes', fee: 500000, requirements: ['Valid business registration', 'Land title deed or lease agreement', 'Environmental impact assessment', 'Security plan', 'Agricultural background of key personnel'], processingTime: '4-6 weeks' },
-  processing:    { name: 'Processing Licence', description: 'For processing cannabis into pharmaceutical or industrial products', fee: 750000, requirements: ['GMP certification', 'Business licence', 'Facility inspection certificate', 'Quality control procedures', 'Staff qualifications documentation'], processingTime: '6-8 weeks' },
-  research:      { name: 'Research Licence', description: 'For academic or scientific research on cannabis', fee: 150000, requirements: ['Research proposal', 'Institutional approval', 'Principal investigator credentials', 'Ethics committee approval', 'Research facility details'], processingTime: '3-4 weeks' },
-  transportation:{ name: 'Transportation Licence', description: 'For transporting cannabis products within Malawi', fee: 300000, requirements: ['Transport company registration', 'Vehicle details and registration', 'Security measures documentation', 'Driver background checks', 'Insurance coverage'], processingTime: '2-3 weeks' },
-  export:        { name: 'Export Licence', description: 'For exporting cannabis products internationally', fee: 1000000, requirements: ['Export licence application', 'International trade certificate', 'Destination country authorisation', 'Product quality certificates', 'Customs clearance documentation'], processingTime: '8-10 weeks' },
-  retail:        { name: 'Retail Licence', description: 'For retail sale of approved cannabis products', fee: 400000, requirements: ['Retail business licence', 'Premises inspection certificate', 'Staff training certificates', 'Age verification system', 'Storage and security plan'], processingTime: '4-5 weeks' },
-
-  // ── LICENCES — from fee schedule ───────────────────────────────────────────
+  // ── LICENCES ───────────────────────────────────────────────────────────────
   'cultivate-sale-medicinal': { name: 'Cultivate & Sale — Medicinal Cannabis', description: 'Licence to cultivate and sell Medicinal Cannabis across the full cultivation value chain.', fee: '$8,500', requirements: ['Land ownership or lease agreement', 'Environmental Impact Assessment', 'Business Registration Certificate', 'Security plan for cultivation site', 'Proof of financial capacity'], processingTime: '30–45 working days' },
   'cultivate-sale-hemp':      { name: 'Cultivate & Sale — Industrial Hemp',    description: 'Licence to cultivate and sell Industrial Hemp crops.', fee: '$1,200', requirements: ['Land ownership or lease agreement', 'Environmental Impact Assessment', 'Business Registration Certificate', 'Security plan for cultivation site', 'Proof of financial capacity'], processingTime: '30–45 working days' },
 
@@ -258,14 +250,14 @@ export const licenseTypeInfo = {
   'storage-hemp':      { name: 'Storage / Warehousing — Industrial Hemp',    description: 'Licence to operate a secure warehousing facility for Industrial Hemp stock.', fee: '$500', requirements: ['Approved and secured warehouse premises', 'Inventory management system', 'Fire safety compliance certificate', 'Access control and CCTV records', 'Business Registration Certificate'], processingTime: '21–30 working days' },
 
   'amendment-medicinal': { name: 'Licence Amendment — Medicinal Cannabis (Change of Location / Person / Board)', description: 'Amendment to an existing Medicinal Cannabis licence following a change of location, responsible person or board.', fee: '$1,700', requirements: ['Copy of current valid licence', 'Written reason for amendment', 'Supporting documents for the change', 'Updated business registration (if applicable)'], processingTime: '14–21 working days' },
-  'amendment-hemp':      { name: 'Licence Amendment — Industrial Hemp (Change of Location / Person / Board)',    description: 'Amendment to an existing Industrial Hemp licence following a change of location, responsible person or board.', fee: '$600',   requirements: ['Copy of current valid licence', 'Written reason for amendment', 'Supporting documents for the change', 'Updated business registration (if applicable)'], processingTime: '14–21 working days' },
+  'amendment-hemp':      { name: 'Licence Amendment — Industrial Hemp (Change of Location / Person / Board)',    description: 'Amendment to an existing Industrial Hemp licence following a change of location, responsible person or board.', fee: '$600', requirements: ['Copy of current valid licence', 'Written reason for amendment', 'Supporting documents for the change', 'Updated business registration (if applicable)'], processingTime: '14–21 working days' },
 
-  // ── PERMITS — from fee schedule ────────────────────────────────────────────
+  // ── PERMITS ────────────────────────────────────────────────────────────────
   'administer-private-hospital': { name: 'Administer Cannabis Drugs — Private Hospitals', description: 'Permit for private healthcare facilities to administer approved cannabis-based pharmaceutical drugs to patients.', fee: '$425', requirements: ['Hospital registration certificate', 'Relevant medical staff qualifications', 'Drug storage and dispensing protocols', 'Patient consent procedures'], processingTime: '14–21 working days' },
   'administer-government':       { name: 'Administer Cannabis Drugs — Government',         description: 'Permit for government healthcare facilities to administer approved cannabis-based pharmaceutical drugs to patients.', fee: '$170', requirements: ['Government facility authorisation', 'Relevant medical staff qualifications', 'Drug storage and dispensing protocols', 'Patient consent procedures'], processingTime: '14–21 working days' },
 
   'stock-sell-private-pharmacy': { name: 'Stock, Sell & Distribute Cannabis Drugs — Private Pharmacies', description: 'Permit for private pharmacies to stock, dispense and distribute approved cannabis pharmaceutical products.', fee: '$170', requirements: ['Pharmacy registration certificate', 'Pharmacist qualifications', 'Secure drug storage facilities', 'Record-keeping system'], processingTime: '14–21 working days' },
-  'stock-sell-govt-pharmacy':    { name: 'Stock, Sell & Distribute Cannabis Drugs — Government Pharmacies', description: 'Permit for government pharmacies to stock, dispense and distribute approved cannabis pharmaceutical products.', fee: '$85',  requirements: ['Government pharmacy authorisation', 'Pharmacist qualifications', 'Secure drug storage facilities', 'Record-keeping system'], processingTime: '14–21 working days' },
+  'stock-sell-govt-pharmacy':    { name: 'Stock, Sell & Distribute Cannabis Drugs — Government Pharmacies', description: 'Permit for government pharmacies to stock, dispense and distribute approved cannabis pharmaceutical products.', fee: '$85', requirements: ['Government pharmacy authorisation', 'Pharmacist qualifications', 'Secure drug storage facilities', 'Record-keeping system'], processingTime: '14–21 working days' },
 
   'medical-research-medicinal': { name: 'Medical Research & Clinical Trials — Medicinal Cannabis', description: 'Permit to conduct clinical trials or formal medical research involving Medicinal Cannabis.', fee: '$850', requirements: ['Research proposal and protocol', 'Institutional ethics committee approval', 'Principal investigator credentials', 'Research facility details', 'Participant consent framework'], processingTime: '21–30 working days' },
   'medical-research-hemp':      { name: 'Medical Research & Clinical Trials — Industrial Hemp',    description: 'Permit to conduct clinical trials or formal medical research involving Industrial Hemp.', fee: '$600', requirements: ['Research proposal and protocol', 'Institutional ethics committee approval', 'Principal investigator credentials', 'Research facility details', 'Participant consent framework'], processingTime: '21–30 working days' },
@@ -278,3 +270,20 @@ export const licenseTypeInfo = {
 
   'import-export': { name: 'Import (Seed) or Export (Semi/Fully Processed Cannabis Products)', description: 'Permit to import cannabis seeds into Malawi or export semi-processed and fully processed cannabis products internationally. Fee is 1.5% of the total consignment value.', fee: '1.5% of Consignment Value', requirements: ['Import/export permit application', 'International trade certificate', 'Destination or origin country authorisation', 'Product quality and laboratory certificates', 'Customs clearance documentation', 'Consignment value declaration'], processingTime: '30–45 working days' },
 };
+
+/**
+ * Safely returns a human-readable display name for any licenseType value.
+ * Use this everywhere you need to display a license type — especially in
+ * charts and tables — to avoid "Cannot read properties of undefined" crashes.
+ *
+ * @example
+ * getLicenseDisplayName('cultivate-sale-medicinal')
+ * // → "Cultivate & Sale — Medicinal Cannabis"
+ *
+ * getLicenseDisplayName('unknown-key')
+ * // → "unknown-key"  (safe fallback, no crash)
+ */
+export function getLicenseDisplayName(type: string): string {
+  const info = licenseTypeInfo[type as keyof typeof licenseTypeInfo];
+  return info?.name ?? type;
+}
