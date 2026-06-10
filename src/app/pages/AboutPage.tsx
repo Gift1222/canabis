@@ -140,24 +140,25 @@ export default function AboutPage() {
 
       {/* Contact Information */}
       <section className="bg-gray-50 rounded-lg p-8">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">Contact Us</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <h3 className="font-bold mb-2">Headquarters</h3>
+            {/* <h3 className="font-bold mb-2">Headquarters</h3> */}
             <p className="text-gray-600">
-              Cannabis Regulatory Authority<br />
-              Capital City, Lilongwe<br />
-              Republic of Malawi
+              Enquiries: +265 983 436 246<br />
+              Toll-Free Line: 4335<br />
+              Email: info@cra.mw<br/>
+              Website: www.cra.mw<br/>
             </p>
           </div>
-          <div>
-            <h3 className="font-bold mb-2">Get in Touch</h3>
+          {/* <div>
+            { <h3 className="font-bold mb-2">Get in Touch</h3> }
             <p className="text-gray-600">
               Email: info@cra.gov.mw<br />
               Phone: +265 1 234 5678<br />
               Fax: +265 1 234 5679
             </p>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>
