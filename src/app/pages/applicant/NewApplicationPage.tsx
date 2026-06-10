@@ -236,6 +236,30 @@ function LicenceTypeSelector({
           </div>
         )}
 
+        {/* ── Processing Fee Note ── */}
+        {selectedSubType && (
+          <div className="rounded-xl p-4" style={{ backgroundColor: '#FFF8E7', border: '1px solid #E8D5A3' }}>
+            <div className="flex items-start gap-2 mb-3">
+              <span style={{ color: '#C9A84C', fontSize: '1.1rem', lineHeight: 1.2 }}>ⓘ</span>
+              <div className="text-sm font-bold" style={{ color: '#1B4D2E' }}>Note on Processing Fees</div>
+            </div>
+            <ul className="space-y-2 text-sm text-gray-700">
+              <li className="flex items-start gap-2">
+                <span style={{ color: '#C9A84C', fontWeight: 700, flexShrink: 0 }}>•</span>
+                <span><strong>Non-refundable processing fees:</strong> Medicinal Cannabis Licenses – US$1,000 &amp; Industrial Hemp Licenses – US$500</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span style={{ color: '#C9A84C', fontWeight: 700, flexShrink: 0 }}>•</span>
+                <span>These fees are charged for each license being applied for.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span style={{ color: '#C9A84C', fontWeight: 700, flexShrink: 0 }}>•</span>
+                <span>All payments must be made in <strong>US dollars</strong> or its equivalent in <strong>Malawi Kwacha</strong>.</span>
+              </li>
+            </ul>
+          </div>
+        )}
+
         {/* ── Info summary card ── */}
         {selectedSubType && (
           <div className="rounded-xl p-4" style={{ backgroundColor: '#EBF4EE', border: '1px solid #AACFB5' }}>

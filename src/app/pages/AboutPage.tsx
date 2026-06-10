@@ -32,24 +32,8 @@ export default function AboutPage() {
         />
       </div>
 
-      {/* Mission & Vision */}
+      {/* Vision & Mission */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-        <Card>
-          <CardHeader>
-            <div className="w-12 h-12 bg-[#D5EBD9] rounded-lg flex items-center justify-center mb-4">
-              <Target className="w-6 h-6 text-[#1B4D2E]" />
-            </div>
-            <CardTitle>Our Mission</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-gray-600">
-              To regulate and oversee the cannabis industry in Malawi, ensuring compliance 
-              with national and international standards while promoting economic growth, 
-              public health, and safety.
-            </p>
-          </CardContent>
-        </Card>
-
         <Card>
           <CardHeader>
             <div className="w-12 h-12 bg-[#EBF4EE] rounded-lg flex items-center justify-center mb-4">
@@ -59,135 +43,96 @@ export default function AboutPage() {
           </CardHeader>
           <CardContent>
             <p className="text-gray-600">
-              To be a world-class regulatory authority that facilitates a thriving, 
-              responsible cannabis industry contributing to Malawi's sustainable development 
-              and international trade competitiveness.
+              A responsive and efficient regulator of the cannabis industry.
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <div className="w-12 h-12 bg-[#D5EBD9] rounded-lg flex items-center justify-center mb-4">
+              <Target className="w-6 h-6 text-[#1B4D2E]" />
+            </div>
+            <CardTitle>Our Mission</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-gray-600">
+              To provide quality, efficient and effective regulatory services in the cannabis
+              industry that sustainably meet environmental and socioeconomic needs for all.
             </p>
           </CardContent>
         </Card>
       </div>
 
+      {/* Strategic Objectives */}
+      <section className="mb-12">
+        <h2 className="text-3xl font-bold text-gray-900 mb-8">Strategic Objectives</h2>
+        <Card>
+          <CardContent className="pt-6">
+            <p className="text-gray-600 mb-6">
+              In the medium-term, CRA aims to achieve the following key strategic objectives:
+            </p>
+            <div className="space-y-4">
+              {[
+                'To enforce standards and compliance in the management of cannabis and its products;',
+                'To provide and facilitate marketing, publicity, and communication',
+              ].map((obj, i) => (
+                <div key={i} className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-[#D5EBD9] rounded-full flex items-center justify-center text-[#1B4D2E] font-bold">
+                    {i + 1}
+                  </div>
+                  <p className="text-gray-600 pt-1">{obj}</p>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      </section>
+
       {/* Core Values */}
       <section className="mb-12">
         <h2 className="text-3xl font-bold text-gray-900 mb-8">Our Core Values</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Card>
-            <CardHeader>
-              <div className="w-12 h-12 bg-[#D5EBD9] rounded-lg flex items-center justify-center mb-4">
-                <Shield className="w-6 h-6 text-[#1B4D2E]" />
-              </div>
-              <CardTitle>Integrity</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-600">
-                We uphold the highest standards of honesty and ethical conduct in all our 
-                regulatory activities and stakeholder interactions.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <div className="w-12 h-12 bg-[#F5EDD6] rounded-lg flex items-center justify-center mb-4">
-                <Users className="w-6 h-6 text-[#A8892A]" />
-              </div>
-              <CardTitle>Transparency</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-600">
-                We ensure open and clear communication, making our processes accessible 
-                and understandable to all stakeholders.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <div className="w-12 h-12 bg-[#D5EBD9] rounded-lg flex items-center justify-center mb-4">
-                <Target className="w-6 h-6 text-[#1B4D2E]" />
-              </div>
-              <CardTitle>Excellence</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-600">
-                We strive for the highest quality in our regulatory framework, services, 
-                and continuous improvement of our systems.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* What We Do */}
-      <section className="mb-12">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8">What We Do</h2>
         <Card>
           <CardContent className="pt-6">
-            <div className="space-y-6">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-[#D5EBD9] rounded-full flex items-center justify-center text-[#1B4D2E] font-bold">
-                  1
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {[
+                { label: 'Integrity',       icon: Shield,  bg: '#D5EBD9', color: '#1B4D2E' },
+                { label: 'Transparency',    icon: Users,   bg: '#F5EDD6', color: '#A8892A' },
+                { label: 'Accountability',  icon: Target,  bg: '#EBF4EE', color: '#1B4D2E' },
+                { label: 'Professionalism', icon: Award,   bg: '#D5EBD9', color: '#1B4D2E' },
+                { label: 'Innovation',      icon: Shield,  bg: '#F5EDD6', color: '#A8892A' },
+              ].map(({ label, icon: Icon, bg, color }) => (
+                <div key={label} className="flex items-center gap-3 p-4 rounded-xl border border-gray-100" style={{ backgroundColor: bg + '55' }}>
+                  <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: bg }}>
+                    <Icon className="w-5 h-5" style={{ color }} />
+                  </div>
+                  <span className="font-semibold text-gray-800">{label}</span>
                 </div>
-                <div>
-                  <h3 className="font-bold text-lg mb-2">License Management</h3>
-                  <p className="text-gray-600">
-                    Issue, renew, and manage licenses for cultivation, processing, research, 
-                    transportation, export, and retail of cannabis products.
-                  </p>
-                </div>
-              </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      </section>
 
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-[#D5EBD9] rounded-full flex items-center justify-center text-[#1B4D2E] font-bold">
-                  2
+      {/* Core Functions */}
+      <section className="mb-12">
+        <h2 className="text-3xl font-bold text-gray-900 mb-8">Core Functions</h2>
+        <Card>
+          <CardContent className="pt-6">
+            <div className="space-y-4">
+              {[
+                'Registration and Licensing Services',
+                'Inspection and Enforcement Services',
+                'Promotion of Research and Extension Services on Cannabis',
+                'Information, Knowledge and Communication Management',
+              ].map((fn, i) => (
+                <div key={i} className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-[#D5EBD9] rounded-full flex items-center justify-center text-[#1B4D2E] font-bold">
+                    {i + 1}
+                  </div>
+                  <p className="text-gray-700 font-medium pt-1">{fn}</p>
                 </div>
-                <div>
-                  <h3 className="font-bold text-lg mb-2">Regulatory Oversight</h3>
-                  <p className="text-gray-600">
-                    Develop and enforce regulations governing the cannabis industry to ensure 
-                    compliance with legal and safety standards.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-[#D5EBD9] rounded-full flex items-center justify-center text-[#1B4D2E] font-bold">
-                  3
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg mb-2">Compliance Monitoring</h3>
-                  <p className="text-gray-600">
-                    Conduct regular inspections and audits of licensed facilities to ensure 
-                    adherence to regulations and quality standards.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-[#D5EBD9] rounded-full flex items-center justify-center text-[#1B4D2E] font-bold">
-                  4
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg mb-2">Industry Support</h3>
-                  <p className="text-gray-600">
-                    Provide guidance and support to industry stakeholders, promoting best 
-                    practices and sustainable business operations.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-[#D5EBD9] rounded-full flex items-center justify-center text-[#1B4D2E] font-bold">
-                  5
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg mb-2">Public Education</h3>
-                  <p className="text-gray-600">
-                    Educate the public about cannabis regulations, safety, and the economic 
-                    benefits of a regulated industry.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </CardContent>
         </Card>
