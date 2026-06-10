@@ -1,12 +1,21 @@
 export type UserRole = 'applicant' | 'admin' | 'inspector';
 
-export type LicenseType = 
-  | 'cultivation'
-  | 'processing'
-  | 'research'
-  | 'transportation'
-  | 'export'
-  | 'retail';
+export type LicenseType =
+  // Legacy keys (used by existing mock data)
+  | 'cultivation' | 'processing' | 'research' | 'transportation' | 'export' | 'retail'
+  // Licence sub-types
+  | 'cultivate-sale-medicinal' | 'cultivate-sale-hemp'
+  | 'process-medicinal'        | 'process-hemp'
+  | 'distribute-medicinal'     | 'distribute-hemp'
+  | 'storage-medicinal'        | 'storage-hemp'
+  | 'amendment-medicinal'      | 'amendment-hemp'
+  // Permit sub-types
+  | 'administer-private-hospital' | 'administer-government'
+  | 'stock-sell-private-pharmacy' | 'stock-sell-govt-pharmacy'
+  | 'medical-research-medicinal'  | 'medical-research-hemp'
+  | 'breeding-research-medicinal' | 'breeding-research-hemp'
+  | 'lab-test-medicinal'          | 'lab-test-hemp'
+  | 'import-export';
 
 export type ApplicationStatus = 
   | 'draft'

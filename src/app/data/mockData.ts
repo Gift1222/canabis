@@ -236,82 +236,45 @@ export const mockStats: DashboardStats = {
 };
 
 export const licenseTypeInfo = {
-  cultivation: {
-    name: 'Cultivation License',
-    description: 'For growing cannabis plants for medical or industrial purposes',
-    fee: 500000,
-    requirements: [
-      'Valid business registration',
-      'Land title deed or lease agreement',
-      'Environmental impact assessment',
-      'Security plan',
-      'Agricultural background of key personnel'
-    ],
-    processingTime: '4-6 weeks'
-  },
-  processing: {
-    name: 'Processing License',
-    description: 'For processing cannabis into pharmaceutical or industrial products',
-    fee: 750000,
-    requirements: [
-      'GMP certification',
-      'Business license',
-      'Facility inspection certificate',
-      'Quality control procedures',
-      'Staff qualifications documentation'
-    ],
-    processingTime: '6-8 weeks'
-  },
-  research: {
-    name: 'Research License',
-    description: 'For academic or scientific research on cannabis',
-    fee: 150000,
-    requirements: [
-      'Research proposal',
-      'Institutional approval',
-      'Principal investigator credentials',
-      'Ethics committee approval',
-      'Research facility details'
-    ],
-    processingTime: '3-4 weeks'
-  },
-  transportation: {
-    name: 'Transportation License',
-    description: 'For transporting cannabis products within Malawi',
-    fee: 300000,
-    requirements: [
-      'Transport company registration',
-      'Vehicle details and registration',
-      'Security measures documentation',
-      'Driver background checks',
-      'Insurance coverage'
-    ],
-    processingTime: '2-3 weeks'
-  },
-  export: {
-    name: 'Export License',
-    description: 'For exporting cannabis products internationally',
-    fee: 1000000,
-    requirements: [
-      'Export license application',
-      'International trade certificate',
-      'Destination country authorization',
-      'Product quality certificates',
-      'Customs clearance documentation'
-    ],
-    processingTime: '8-10 weeks'
-  },
-  retail: {
-    name: 'Retail License',
-    description: 'For retail sale of approved cannabis products',
-    fee: 400000,
-    requirements: [
-      'Retail business license',
-      'Premises inspection certificate',
-      'Staff training certificates',
-      'Age verification system',
-      'Storage and security plan'
-    ],
-    processingTime: '4-5 weeks'
-  }
+  // ── Legacy keys (kept for existing mock application data) ──────────────────
+  cultivation:   { name: 'Cultivation Licence', description: 'For growing cannabis plants for medical or industrial purposes', fee: 500000, requirements: ['Valid business registration', 'Land title deed or lease agreement', 'Environmental impact assessment', 'Security plan', 'Agricultural background of key personnel'], processingTime: '4-6 weeks' },
+  processing:    { name: 'Processing Licence', description: 'For processing cannabis into pharmaceutical or industrial products', fee: 750000, requirements: ['GMP certification', 'Business licence', 'Facility inspection certificate', 'Quality control procedures', 'Staff qualifications documentation'], processingTime: '6-8 weeks' },
+  research:      { name: 'Research Licence', description: 'For academic or scientific research on cannabis', fee: 150000, requirements: ['Research proposal', 'Institutional approval', 'Principal investigator credentials', 'Ethics committee approval', 'Research facility details'], processingTime: '3-4 weeks' },
+  transportation:{ name: 'Transportation Licence', description: 'For transporting cannabis products within Malawi', fee: 300000, requirements: ['Transport company registration', 'Vehicle details and registration', 'Security measures documentation', 'Driver background checks', 'Insurance coverage'], processingTime: '2-3 weeks' },
+  export:        { name: 'Export Licence', description: 'For exporting cannabis products internationally', fee: 1000000, requirements: ['Export licence application', 'International trade certificate', 'Destination country authorisation', 'Product quality certificates', 'Customs clearance documentation'], processingTime: '8-10 weeks' },
+  retail:        { name: 'Retail Licence', description: 'For retail sale of approved cannabis products', fee: 400000, requirements: ['Retail business licence', 'Premises inspection certificate', 'Staff training certificates', 'Age verification system', 'Storage and security plan'], processingTime: '4-5 weeks' },
+
+  // ── LICENCES — from fee schedule ───────────────────────────────────────────
+  'cultivate-sale-medicinal': { name: 'Cultivate & Sale — Medicinal Cannabis', description: 'Licence to cultivate and sell Medicinal Cannabis across the full cultivation value chain.', fee: '$8,500', requirements: ['Land ownership or lease agreement', 'Environmental Impact Assessment', 'Business Registration Certificate', 'Security plan for cultivation site', 'Proof of financial capacity'], processingTime: '30–45 working days' },
+  'cultivate-sale-hemp':      { name: 'Cultivate & Sale — Industrial Hemp',    description: 'Licence to cultivate and sell Industrial Hemp crops.', fee: '$1,200', requirements: ['Land ownership or lease agreement', 'Environmental Impact Assessment', 'Business Registration Certificate', 'Security plan for cultivation site', 'Proof of financial capacity'], processingTime: '30–45 working days' },
+
+  'process-medicinal': { name: 'Process — Medicinal Cannabis', description: 'Licence to process raw Medicinal Cannabis into finished or semi-finished products.', fee: '$8,500', requirements: ['Certified processing facility with GMP compliance', 'Qualified technical personnel', 'Waste management plan', 'Quality control procedures', 'Business Registration Certificate'], processingTime: '30–45 working days' },
+  'process-hemp':      { name: 'Process — Industrial Hemp',    description: 'Licence to process Industrial Hemp into finished or semi-finished products.', fee: '$3,000', requirements: ['Certified processing facility with GMP compliance', 'Qualified technical personnel', 'Waste management plan', 'Quality control procedures', 'Business Registration Certificate'], processingTime: '30–45 working days' },
+
+  'distribute-medicinal': { name: 'Distribute — Medicinal Cannabis (Transport, Wholesale & Retail)', description: 'Licence covering distribution of Medicinal Cannabis including transportation, wholesale and retail.', fee: '$2,380', requirements: ['Approved distribution or retail premises', 'Registered vehicles with tracking (for transport)', 'Storage and security protocols', 'Product traceability records', 'Business Registration Certificate'], processingTime: '21–30 working days' },
+  'distribute-hemp':      { name: 'Distribute — Industrial Hemp (Transport, Wholesale & Retail)',    description: 'Licence covering distribution of Industrial Hemp including transportation, wholesale and retail.', fee: '$1,680', requirements: ['Approved distribution or retail premises', 'Registered vehicles with tracking (for transport)', 'Storage and security protocols', 'Product traceability records', 'Business Registration Certificate'], processingTime: '21–30 working days' },
+
+  'storage-medicinal': { name: 'Storage / Warehousing — Medicinal Cannabis', description: 'Licence to operate a secure warehousing facility for Medicinal Cannabis stock.', fee: '$500', requirements: ['Approved and secured warehouse premises', 'Inventory management system', 'Fire safety compliance certificate', 'Access control and CCTV records', 'Business Registration Certificate'], processingTime: '21–30 working days' },
+  'storage-hemp':      { name: 'Storage / Warehousing — Industrial Hemp',    description: 'Licence to operate a secure warehousing facility for Industrial Hemp stock.', fee: '$500', requirements: ['Approved and secured warehouse premises', 'Inventory management system', 'Fire safety compliance certificate', 'Access control and CCTV records', 'Business Registration Certificate'], processingTime: '21–30 working days' },
+
+  'amendment-medicinal': { name: 'Licence Amendment — Medicinal Cannabis (Change of Location / Person / Board)', description: 'Amendment to an existing Medicinal Cannabis licence following a change of location, responsible person or board.', fee: '$1,700', requirements: ['Copy of current valid licence', 'Written reason for amendment', 'Supporting documents for the change', 'Updated business registration (if applicable)'], processingTime: '14–21 working days' },
+  'amendment-hemp':      { name: 'Licence Amendment — Industrial Hemp (Change of Location / Person / Board)',    description: 'Amendment to an existing Industrial Hemp licence following a change of location, responsible person or board.', fee: '$600',   requirements: ['Copy of current valid licence', 'Written reason for amendment', 'Supporting documents for the change', 'Updated business registration (if applicable)'], processingTime: '14–21 working days' },
+
+  // ── PERMITS — from fee schedule ────────────────────────────────────────────
+  'administer-private-hospital': { name: 'Administer Cannabis Drugs — Private Hospitals', description: 'Permit for private healthcare facilities to administer approved cannabis-based pharmaceutical drugs to patients.', fee: '$425', requirements: ['Hospital registration certificate', 'Relevant medical staff qualifications', 'Drug storage and dispensing protocols', 'Patient consent procedures'], processingTime: '14–21 working days' },
+  'administer-government':       { name: 'Administer Cannabis Drugs — Government',         description: 'Permit for government healthcare facilities to administer approved cannabis-based pharmaceutical drugs to patients.', fee: '$170', requirements: ['Government facility authorisation', 'Relevant medical staff qualifications', 'Drug storage and dispensing protocols', 'Patient consent procedures'], processingTime: '14–21 working days' },
+
+  'stock-sell-private-pharmacy': { name: 'Stock, Sell & Distribute Cannabis Drugs — Private Pharmacies', description: 'Permit for private pharmacies to stock, dispense and distribute approved cannabis pharmaceutical products.', fee: '$170', requirements: ['Pharmacy registration certificate', 'Pharmacist qualifications', 'Secure drug storage facilities', 'Record-keeping system'], processingTime: '14–21 working days' },
+  'stock-sell-govt-pharmacy':    { name: 'Stock, Sell & Distribute Cannabis Drugs — Government Pharmacies', description: 'Permit for government pharmacies to stock, dispense and distribute approved cannabis pharmaceutical products.', fee: '$85',  requirements: ['Government pharmacy authorisation', 'Pharmacist qualifications', 'Secure drug storage facilities', 'Record-keeping system'], processingTime: '14–21 working days' },
+
+  'medical-research-medicinal': { name: 'Medical Research & Clinical Trials — Medicinal Cannabis', description: 'Permit to conduct clinical trials or formal medical research involving Medicinal Cannabis.', fee: '$850', requirements: ['Research proposal and protocol', 'Institutional ethics committee approval', 'Principal investigator credentials', 'Research facility details', 'Participant consent framework'], processingTime: '21–30 working days' },
+  'medical-research-hemp':      { name: 'Medical Research & Clinical Trials — Industrial Hemp',    description: 'Permit to conduct clinical trials or formal medical research involving Industrial Hemp.', fee: '$600', requirements: ['Research proposal and protocol', 'Institutional ethics committee approval', 'Principal investigator credentials', 'Research facility details', 'Participant consent framework'], processingTime: '21–30 working days' },
+
+  'breeding-research-medicinal': { name: 'Breeding & Agronomy Research — Medicinal Cannabis', description: 'Permit for plant breeding, variety development and agronomy field research on Medicinal Cannabis crops.', fee: '$850', requirements: ['Research proposal', 'Accredited research institution letter', 'Qualified plant scientist on team', 'Secure research plot or greenhouse', 'Data management and reporting plan'], processingTime: '21–30 working days' },
+  'breeding-research-hemp':      { name: 'Breeding & Agronomy Research — Industrial Hemp',    description: 'Permit for plant breeding, variety development and agronomy field research on Industrial Hemp crops.', fee: '$600', requirements: ['Research proposal', 'Accredited research institution letter', 'Qualified plant scientist on team', 'Secure research plot or greenhouse', 'Data management and reporting plan'], processingTime: '21–30 working days' },
+
+  'lab-test-medicinal': { name: 'Laboratory Test on Cannabis — Medicinal Cannabis', description: 'Permit for certified laboratories to conduct testing and analysis of Medicinal Cannabis samples.', fee: '$170', requirements: ['Laboratory accreditation certificate', 'Qualified laboratory personnel', 'Chain of custody procedures', 'Equipment calibration records', 'Test reporting protocols'], processingTime: '14–21 working days' },
+  'lab-test-hemp':      { name: 'Laboratory Test on Cannabis — Industrial Hemp',    description: 'Permit for certified laboratories to conduct testing and analysis of Industrial Hemp samples.', fee: '$120', requirements: ['Laboratory accreditation certificate', 'Qualified laboratory personnel', 'Chain of custody procedures', 'Equipment calibration records', 'Test reporting protocols'], processingTime: '14–21 working days' },
+
+  'import-export': { name: 'Import (Seed) or Export (Semi/Fully Processed Cannabis Products)', description: 'Permit to import cannabis seeds into Malawi or export semi-processed and fully processed cannabis products internationally. Fee is 1.5% of the total consignment value.', fee: '1.5% of Consignment Value', requirements: ['Import/export permit application', 'International trade certificate', 'Destination or origin country authorisation', 'Product quality and laboratory certificates', 'Customs clearance documentation', 'Consignment value declaration'], processingTime: '30–45 working days' },
 };

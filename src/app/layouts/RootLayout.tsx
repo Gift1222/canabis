@@ -247,7 +247,8 @@ export default function RootLayout() {
               <div className="font-semibold mb-3 text-sm" style={{ color: '#C9A84C' }}>Contact</div>
               <div className="space-y-1 text-sm" style={{ color: 'rgba(255,255,255,0.6)' }}>
                 <div>The Director General,</div>
-                <div>Cannabis Regulatory Authority</div>
+                <div>Cannabis Regulatory Authority,</div>
+                <div>Gemini House 7th Floor, West Wing</div>
                 <div>Post Office Box 30075,</div>
                 <div>Lilongwe 3,</div>
                 <div>Malawi.</div>
