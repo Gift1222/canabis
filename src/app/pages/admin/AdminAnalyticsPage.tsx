@@ -16,7 +16,16 @@ import {
   Legend,
   ResponsiveContainer
 } from 'recharts';
-import { mockStats } from '../../data/mockData';
+import { mockStats as rawStats } from '../../data/mockData';
+
+// Guard against undefined mockStats
+const mockStats = rawStats ?? {
+  totalApplications: 0,
+  approved: 0,
+  pendingReview: 0,
+  rejected: 0,
+  revenue: 0,
+};
 
 export default function AdminAnalyticsPage() {
   const applicationTrends = [
@@ -56,14 +65,14 @@ export default function AdminAnalyticsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen" style={{ backgroundColor: '#F7F9F6' }}>
       {/* Header */}
-      <div className="bg-white border-b">
+      <div style={{ background: 'linear-gradient(135deg, #1B4D2E 0%, #2D6A4F 100%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between flex-wrap gap-4">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">Analytics & Reports</h1>
-              <p className="text-gray-600 mt-1">Comprehensive insights and statistics</p>
+              <h1 className="text-3xl font-bold text-white">Analytics & Reports</h1>
+              <p className="mt-1" style={{ color: '#C9A84C' }}>Comprehensive insights and statistics</p>
             </div>
             <Select defaultValue="ytd">
               <SelectTrigger className="w-48">
@@ -206,7 +215,7 @@ export default function AdminAnalyticsPage() {
                     cx="50%"
                     cy="50%"
                     labelLine={false}
-                    label={(entry) => `${entry.name}: ${entry.value}`}
+                    label={(entry) => entry && entry.name ? `${entry.name}: ${entry.value}` : ''}
                     outerRadius={100}
                     fill="#8884d8"
                     dataKey="value"
