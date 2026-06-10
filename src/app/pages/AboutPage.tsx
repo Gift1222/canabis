@@ -12,8 +12,14 @@ export default function AboutPage() {
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
           About the Cannabis Regulatory Authority
         </h1>
-        <p className="text-xl text-gray-600">
-          Ensuring safe, legal, and sustainable cannabis industry development in Malawi
+        <p className="text-lg text-gray-700 leading-relaxed max-w-4xl">
+          The Cannabis Regulatory Authority (CRA) was established to regulate the Cannabis industry
+          as provided for in the Cannabis Regulation Act 2020. The Authority is mandated to license
+          all activities across the Cannabis value chain such as cultivation, processing, distribution,
+          storage, exportation, importation, research, laboratory tests, transportation and medical use
+          of Cannabis. The Cannabis Regulation Act 2020 promotes production of Cannabis only for
+          medicinal, industrial and scientific use and does not in any manner advocate, authorize,
+          promote or legally or socially accept the use of cannabis for recreational uses.
         </p>
       </div>
 
@@ -67,8 +73,8 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Card>
             <CardHeader>
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                <Shield className="w-6 h-6 text-purple-700" />
+              <div className="w-12 h-12 bg-[#D5EBD9] rounded-lg flex items-center justify-center mb-4">
+                <Shield className="w-6 h-6 text-[#1B4D2E]" />
               </div>
               <CardTitle>Integrity</CardTitle>
             </CardHeader>
@@ -82,8 +88,8 @@ export default function AboutPage() {
 
           <Card>
             <CardHeader>
-              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                <Users className="w-6 h-6 text-orange-700" />
+              <div className="w-12 h-12 bg-[#F5EDD6] rounded-lg flex items-center justify-center mb-4">
+                <Users className="w-6 h-6 text-[#A8892A]" />
               </div>
               <CardTitle>Transparency</CardTitle>
             </CardHeader>
