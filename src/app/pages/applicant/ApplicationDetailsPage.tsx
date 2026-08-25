@@ -16,7 +16,7 @@ import {
   MapPin,
   Calendar
 } from 'lucide-react';
-import { mockApplications, licenseTypeInfo } from '../../data/mockData';
+import { mockApplications, licenseTypeInfo, getLicenseDisplayName } from '../../data/mockData';
 import { ApplicationStatus } from '../../types';
 import { toast } from 'sonner';
 
@@ -120,12 +120,12 @@ export default function ApplicationDetailsPage() {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <p className="text-sm text-gray-500 mb-1">License Type</p>
-                    <p className="font-medium capitalize">{application.licenseType.replace('_', ' ')}</p>
+                    <p className="font-medium">{getLicenseDisplayName(application.licenseType)}</p>
                   </div>
                   <div>
                     <p className="text-sm text-gray-500 mb-1">Application Fee</p>
                     <p className="font-medium">
-                      MWK {application.paymentAmount?.toLocaleString() || 'N/A'}
+                      {licenseTypeInfo[application.licenseType]?.fee || `$${application.paymentAmount?.toLocaleString()}`}
                     </p>
                   </div>
                   {application.licenseNumber && (
@@ -291,9 +291,9 @@ export default function ApplicationDetailsPage() {
                     Your application has been approved. Complete payment to receive your license.
                   </p>
                   <div className="bg-white p-3 rounded-lg mb-4">
-                    <p className="text-sm text-gray-600">Amount Due</p>
+                    <p className="text-[#0F2A19] font-semibold text-xs mb-1">Amount Due</p>
                     <p className="text-2xl font-bold text-gray-900">
-                      MWK {application.paymentAmount?.toLocaleString()}
+                      {licenseTypeInfo[application.licenseType]?.fee || `$${application.paymentAmount?.toLocaleString()}`}
                     </p>
                   </div>
                   <Button className="w-full" onClick={handlePayment}>

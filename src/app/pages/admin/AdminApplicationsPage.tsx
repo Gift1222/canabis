@@ -14,7 +14,7 @@ import {
   TableRow,
 } from '../../components/ui/table';
 import { Search, Filter, Eye, Download } from 'lucide-react';
-import { mockApplications } from '../../data/mockData';
+import { mockApplications, getLicenseDisplayName } from '../../data/mockData';
 import { ApplicationStatus, LicenseType } from '../../types';
 
 export default function AdminApplicationsPage() {
@@ -154,8 +154,8 @@ export default function AdminApplicationsPage() {
                       <TableCell className="font-medium">{app.id}</TableCell>
                       <TableCell>{app.applicantName}</TableCell>
                       <TableCell>{app.businessName}</TableCell>
-                      <TableCell className="capitalize">
-                        {app.licenseType.replace('_', ' ')}
+                      <TableCell>
+                        {getLicenseDisplayName(app.licenseType)}
                       </TableCell>
                       <TableCell>{getStatusBadge(app.status)}</TableCell>
                       <TableCell>{app.submittedDate}</TableCell>

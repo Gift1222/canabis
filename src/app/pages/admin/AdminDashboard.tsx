@@ -11,20 +11,18 @@ import {
   DollarSign,
   AlertCircle
 } from 'lucide-react';
-import { mockStats, mockApplications } from '../../data/mockData';
+import { mockStats, mockApplications, getLicenseDisplayName } from '../../data/mockData';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
 export default function AdminDashboard() {
   const recentApplications = mockApplications.slice(0, 5);
 
-  const applicationsByType = [
-    { name: 'Cultivation', value: mockApplications.filter(a => a.licenseType === 'cultivation').length },
-    { name: 'Processing', value: mockApplications.filter(a => a.licenseType === 'processing').length },
-    { name: 'Research', value: mockApplications.filter(a => a.licenseType === 'research').length },
-    { name: 'Export', value: mockApplications.filter(a => a.licenseType === 'export').length },
-    { name: 'Transport', value: mockApplications.filter(a => a.licenseType === 'transportation').length },
-    { name: 'Retail', value: mockApplications.filter(a => a.licenseType === 'retail').length },
-  ].filter(item => item.value > 0);
+  const typeCounts: Record<string, number> = {};
+  mockApplications.forEach(a => {
+    const name = getLicenseDisplayName(a.licenseType);
+    typeCounts[name] = (typeCounts[name] || 0) + 1;
+  });
+  const applicationsByType = Object.entries(typeCounts).map(([name, value]) => ({ name, value }));
 
   const applicationsByMonth = [
     { month: 'Jan', count: 8 },
@@ -134,7 +132,7 @@ export default function AdminDashboard() {
             </CardHeader>
             <CardContent>
               <div className="text-3xl font-bold text-[#2D6A4F]">
-                MWK {(mockStats.revenue / 1000000).toFixed(1)}M
+                ${mockStats.revenue.toLocaleString()} USD
               </div>
               <p className="text-xs text-gray-500 mt-1">From license fees</p>
             </CardContent>
@@ -216,7 +214,7 @@ export default function AdminDashboard() {
                       </span>
                     </div>
                     <p className="text-sm text-gray-600">{app.businessName}</p>
-                    <p className="text-xs text-gray-500 capitalize">{app.licenseType} • {app.submittedDate}</p>
+                    <p className="text-xs text-gray-500">{getLicenseDisplayName(app.licenseType)} • {app.submittedDate}</p>
                   </div>
                   <Link to={`/admin/application/${app.id}`}>
                     <Button size="sm">Review</Button>

@@ -63,7 +63,7 @@ export const mockApplications: LicenseApplication[] = [
       }
     ],
     paymentStatus: 'pending',
-    paymentAmount: 500000
+    paymentAmount: 8500
   },
   {
     id: 'APP-2026-002',
@@ -100,7 +100,7 @@ export const mockApplications: LicenseApplication[] = [
     reviewNotes: 'All requirements met. Facility inspection passed.',
     reviewerId: 'admin-001',
     paymentStatus: 'completed',
-    paymentAmount: 750000,
+    paymentAmount: 8500,
     licenseNumber: 'CRA-PROC-2026-002'
   },
   {
@@ -133,7 +133,7 @@ export const mockApplications: LicenseApplication[] = [
       }
     ],
     paymentStatus: 'pending',
-    paymentAmount: 150000
+    paymentAmount: 850
   },
   {
     id: 'APP-2026-004',
@@ -168,7 +168,7 @@ export const mockApplications: LicenseApplication[] = [
     reviewNotes: 'Approved pending payment of fees',
     reviewerId: 'admin-001',
     paymentStatus: 'pending',
-    paymentAmount: 1000000
+    paymentAmount: 1500
   }
 ];
 
@@ -232,7 +232,7 @@ export const mockStats: DashboardStats = {
   rejected: 3,
   activeLicenses: 25,
   expiringLicenses: 4,
-  revenue: 15750000
+  revenue: 157500
 };
 
 export const licenseTypeInfo = {

@@ -20,7 +20,7 @@ export default function RegisterPage() {
     full_name: '',
     phone: '',
     national_id: '',
-    role: 'farmer',
+    role: 'cooperative_rep',
     district: '',
     region: '',
   });
@@ -141,7 +141,6 @@ export default function RegisterPage() {
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="farmer">Individual Farmer</SelectItem>
                     <SelectItem value="cooperative_rep">Cooperative Representative</SelectItem>
                     <SelectItem value="cra_reviewer">CRA Reviewer</SelectItem>
                     <SelectItem value="cra_admin">CRA Administrator</SelectItem>

@@ -38,12 +38,12 @@ export default function AdminAnalyticsPage() {
   ];
 
   const revenueData = [
-    { month: 'Oct', revenue: 2.5 },
-    { month: 'Nov', revenue: 4.2 },
-    { month: 'Dec', revenue: 5.8 },
-    { month: 'Jan', revenue: 4.5 },
-    { month: 'Feb', revenue: 6.3 },
-    { month: 'Mar', revenue: 7.5 },
+    { month: 'Oct', revenue: 25 },
+    { month: 'Nov', revenue: 42 },
+    { month: 'Dec', revenue: 58 },
+    { month: 'Jan', revenue: 45 },
+    { month: 'Feb', revenue: 63 },
+    { month: 'Mar', revenue: 75 },
   ];
 
   const licenseTypeDistribution = [
@@ -151,7 +151,7 @@ export default function AdminAnalyticsPage() {
             </CardHeader>
             <CardContent>
               <div className="text-3xl font-bold text-[#2D6A4F]">
-                MWK {(mockStats.revenue / 1000000).toFixed(1)}M
+                ${mockStats.revenue.toLocaleString()} USD
               </div>
               <div className="flex items-center gap-1 text-sm text-[#2D6A4F] mt-1">
                 <TrendingUp className="w-4 h-4" />
@@ -185,7 +185,7 @@ export default function AdminAnalyticsPage() {
 
           <Card>
             <CardHeader>
-              <CardTitle>Revenue Trends (MWK Millions)</CardTitle>
+              <CardTitle>Revenue Trends ($ USD Thousands)</CardTitle>
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={300}>
@@ -194,7 +194,7 @@ export default function AdminAnalyticsPage() {
                   <XAxis dataKey="month" />
                   <YAxis />
                   <Tooltip />
-                  <Bar dataKey="revenue" fill="#1B4D2E" name="Revenue (M)" />
+                  <Bar dataKey="revenue" fill="#1B4D2E" name="Revenue ($k USD)" />
                 </BarChart>
               </ResponsiveContainer>
             </CardContent>

@@ -20,7 +20,7 @@ import {
   Calendar,
   User
 } from 'lucide-react';
-import { mockApplications } from '../../data/mockData';
+import { mockApplications, getLicenseDisplayName, licenseTypeInfo } from '../../data/mockData';
 
 export default function AdminApplicationReviewPage() {
   const { id } = useParams();
@@ -148,7 +148,7 @@ export default function AdminApplicationReviewPage() {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <p className="text-sm text-gray-500 mb-1">License Type</p>
-                    <p className="font-medium capitalize">{application.licenseType.replace('_', ' ')}</p>
+                    <p className="font-medium">{getLicenseDisplayName(application.licenseType)}</p>
                   </div>
                   <div>
                     <p className="text-sm text-gray-500 mb-1">Submitted Date</p>
@@ -234,7 +234,7 @@ export default function AdminApplicationReviewPage() {
                     id="reviewNotes"
                     value={reviewNotes}
                     onChange={(e) => setReviewNotes(e.target.value)}
-                    placeholder="Enter detailed review notes, observations, and recommendations..."
+                    placeholder="Enter detailed review notes, observations and recommendations..."
                     rows={6}
                     className="resize-none"
                   />
@@ -263,7 +263,7 @@ export default function AdminApplicationReviewPage() {
                 <div className="bg-white p-3 rounded-lg">
                   <p className="text-sm text-gray-600 mb-1">Application Fee</p>
                   <p className="font-bold text-lg">
-                    MWK {application.paymentAmount?.toLocaleString()}
+                    {licenseTypeInfo[application.licenseType]?.fee || (`$` + application.paymentAmount?.toLocaleString() + ` USD`)}
                   </p>
                 </div>
 

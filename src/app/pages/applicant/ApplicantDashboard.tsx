@@ -20,7 +20,7 @@ import {
   CreditCard,
   AlertCircle
 } from 'lucide-react';
-import { currentUser, mockApplications } from '../../data/mockData';
+import { currentUser, mockApplications, getLicenseDisplayName } from '../../data/mockData';
 import { ApplicationStatus } from '../../types';
 
 export default function ApplicantDashboard() {
@@ -178,7 +178,7 @@ export default function ApplicantDashboard() {
                   {userApplications.map((app) => (
                     <TableRow key={app.id}>
                       <TableCell className="font-medium">{app.id}</TableCell>
-                      <TableCell className="capitalize">{app.licenseType.replace('_', ' ')}</TableCell>
+                      <TableCell className="font-medium">{getLicenseDisplayName(app.licenseType)}</TableCell>
                       <TableCell>{app.businessName}</TableCell>
                       <TableCell>{getStatusBadge(app.status)}</TableCell>
                       <TableCell>{app.submittedDate}</TableCell>

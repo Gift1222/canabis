@@ -12,7 +12,7 @@ import {
   TableRow,
 } from '../../components/ui/table';
 import { Search, Download, FileText, AlertCircle, CheckCircle } from 'lucide-react';
-import { mockApplications } from '../../data/mockData';
+import { mockApplications, getLicenseDisplayName } from '../../data/mockData';
 
 export default function AdminLicensesPage() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -91,7 +91,7 @@ export default function AdminLicensesPage() {
             </CardHeader>
             <CardContent>
               <div className="text-3xl font-bold text-[#2D6A4F]">
-                MWK {(activeLicenses.reduce((sum, l) => sum + (l.paymentAmount || 0), 0) / 1000000).toFixed(1)}M
+                ${activeLicenses.reduce((sum, l) => sum + (l.paymentAmount || 0), 0).toLocaleString()} USD
               </div>
             </CardContent>
           </Card>
@@ -162,8 +162,8 @@ export default function AdminLicensesPage() {
                         {license.licenseNumber || 'Pending'}
                       </TableCell>
                       <TableCell>{license.businessName}</TableCell>
-                      <TableCell className="capitalize">
-                        {license.licenseType.replace('_', ' ')}
+                      <TableCell>
+                        {getLicenseDisplayName(license.licenseType)}
                       </TableCell>
                       <TableCell>{license.approvedDate || 'N/A'}</TableCell>
                       <TableCell>
