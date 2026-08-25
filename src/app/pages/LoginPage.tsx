@@ -7,6 +7,7 @@ import { Button } from '../components/ui/button';
 import { useAuth } from '../contexts/AuthContext';
 import { toast } from 'sonner';
 import { FlaskConical, User, ShieldCheck } from 'lucide-react';
+import craLogo from '@/assets/images/logo.png';
 
 const DEMO_ACCOUNTS = [
   {
@@ -70,7 +71,7 @@ export default function LoginPage() {
         <div className="text-center mb-8">
           <div className="flex justify-center mb-5">
             <img
-              src="/logo.png"
+              src={craLogo}
               alt="Cannabis Regulatory Authority Logo"
               className="w-24 h-24 md:w-28 md:h-28 object-contain"
             />

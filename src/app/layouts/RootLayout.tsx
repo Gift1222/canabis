@@ -16,6 +16,7 @@ import {
 import { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import DemoBar from '../components/DemoBar';
+import craLogo from '@/assets/images/logo.png';
 
 export default function RootLayout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -51,12 +52,9 @@ export default function RootLayout() {
             {/* Logo only */}
             <Link to="/" className="flex items-center group py-0.5">
               <img
-                src="/logo.png"
+                src={craLogo}
                 alt="Cannabis Regulatory Authority Logo"
                 className="w-14 h-14 md:w-16 md:h-16 object-contain shrink-0 transition-transform duration-200 group-hover:scale-105"
-                onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).src = "https://cra.mw/img/logo.png";
-                }}
               />
             </Link>
 
@@ -220,10 +218,9 @@ export default function RootLayout() {
             <div className="md:col-span-2">
               <div className="flex items-center gap-3.5 mb-4">
                 <img
-                  src="/logo.png"
+                  src={craLogo}
                   alt="Cannabis Regulatory Authority Logo"
                   className="w-16 h-16 object-contain shrink-0"
-                  onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://cra.mw/img/logo.png'; }}
                 />
                 <div>
                   <div className="font-bold text-lg text-white">Cannabis Regulatory Authority</div>

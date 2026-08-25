@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { useAuth } from '../contexts/AuthContext';
 import { toast } from 'sonner';
 import { Leaf } from 'lucide-react';
+import craLogo from '@/assets/images/logo.png';
 
 export default function RegisterPage() {
   const navigate = useNavigate();
@@ -77,7 +78,7 @@ export default function RegisterPage() {
         <CardHeader className="text-center">
           <div className="flex justify-center mb-5">
             <img
-              src="/logo.png"
+              src={craLogo}
               alt="Cannabis Regulatory Authority Logo"
               className="w-24 h-24 md:w-28 md:h-28 object-contain"
             />

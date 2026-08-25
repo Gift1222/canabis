@@ -53,7 +53,7 @@ export default function AdminApplicationsPage() {
     <div className="min-h-screen">
       {/* Header */}
       <div style={{ background: "linear-gradient(135deg, #1B4D2E 0%, #2D6A4F 100%)" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="w-full px-4 sm:px-6 lg:px-10 py-6">
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-3xl font-bold text-white">All Applications</h1>
@@ -67,7 +67,7 @@ export default function AdminApplicationsPage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="w-full px-4 sm:px-6 lg:px-10 py-8">
         {/* Filters */}
         <Card className="mb-6">
           <CardContent className="pt-6">
@@ -127,51 +127,53 @@ export default function AdminApplicationsPage() {
         </div>
 
         {/* Applications Table */}
-        <Card>
+        <Card className="w-full shadow-sm">
           <CardContent className="p-0">
-            <div className="overflow-x-auto w-full"><Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Application ID</TableHead>
-                  <TableHead>Applicant</TableHead>
-                  <TableHead>Business Name</TableHead>
-                  <TableHead>License Type</TableHead>
-                  <TableHead>Status</TableHead>
-                  <TableHead>Submitted</TableHead>
-                  <TableHead className="text-right">Actions</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {filteredApplications.length === 0 ? (
-                  <TableRow>
-                    <TableCell colSpan={7} className="text-center py-12 text-gray-500">
-                      No applications found matching your criteria
-                    </TableCell>
+            <div className="overflow-x-auto w-full">
+              <Table className="w-full">
+                <TableHeader>
+                  <TableRow className="bg-gray-50/75">
+                    <TableHead className="font-semibold text-gray-900 py-3.5 px-4">Application ID</TableHead>
+                    <TableHead className="font-semibold text-gray-900 py-3.5 px-4">Applicant</TableHead>
+                    <TableHead className="font-semibold text-gray-900 py-3.5 px-4">Business Name</TableHead>
+                    <TableHead className="font-semibold text-gray-900 py-3.5 px-4">License Type</TableHead>
+                    <TableHead className="font-semibold text-gray-900 py-3.5 px-4">Status</TableHead>
+                    <TableHead className="font-semibold text-gray-900 py-3.5 px-4">Submitted</TableHead>
+                    <TableHead className="text-right font-semibold text-gray-900 py-3.5 px-4">Actions</TableHead>
                   </TableRow>
-                ) : (
-                  filteredApplications.map((app) => (
-                    <TableRow key={app.id}>
-                      <TableCell className="font-medium">{app.id}</TableCell>
-                      <TableCell>{app.applicantName}</TableCell>
-                      <TableCell>{app.businessName}</TableCell>
-                      <TableCell>
-                        {getLicenseDisplayName(app.licenseType)}
-                      </TableCell>
-                      <TableCell>{getStatusBadge(app.status)}</TableCell>
-                      <TableCell>{app.submittedDate}</TableCell>
-                      <TableCell className="text-right">
-                        <Link to={`/admin/application/${app.id}`}>
-                          <Button variant="outline" size="sm">
-                            <Eye className="w-4 h-4 mr-2" />
-                            Review
-                          </Button>
-                        </Link>
+                </TableHeader>
+                <TableBody>
+                  {filteredApplications.length === 0 ? (
+                    <TableRow>
+                      <TableCell colSpan={7} className="text-center py-12 text-gray-500">
+                        No applications found matching your criteria
                       </TableCell>
                     </TableRow>
-                  ))
-                )}
-              </TableBody>
-            </Table></div>
+                  ) : (
+                    filteredApplications.map((app) => (
+                      <TableRow key={app.id} className="hover:bg-gray-50/60 transition-colors">
+                        <TableCell className="font-semibold text-[#1B4D2E] py-4 px-4">{app.id}</TableCell>
+                        <TableCell className="py-4 px-4 font-medium text-gray-900">{app.applicantName}</TableCell>
+                        <TableCell className="py-4 px-4 text-gray-700">{app.businessName}</TableCell>
+                        <TableCell className="py-4 px-4 text-gray-700">
+                          {getLicenseDisplayName(app.licenseType)}
+                        </TableCell>
+                        <TableCell className="py-4 px-4">{getStatusBadge(app.status)}</TableCell>
+                        <TableCell className="py-4 px-4 text-gray-600 text-sm">{app.submittedDate}</TableCell>
+                        <TableCell className="text-right py-4 px-4">
+                          <Link to={`/admin/application/${app.id}`}>
+                            <Button variant="outline" size="sm" className="hover:bg-[#EBF4EE] hover:text-[#1B4D2E] border-gray-300">
+                              <Eye className="w-4 h-4 mr-2" />
+                              Review
+                            </Button>
+                          </Link>
+                        </TableCell>
+                      </TableRow>
+                    ))
+                  )}
+                </TableBody>
+              </Table>
+            </div>
           </CardContent>
         </Card>
       </div>

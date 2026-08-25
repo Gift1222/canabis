@@ -1,10 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Shield, Target, Users, Award } from 'lucide-react';
-import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+import craBillboardImg from '@/assets/images/cra_billboard_1787643257648.jpg';
 
 export default function AboutPage() {
-  const billboardImageUrl = "/about-us-billboard.jpg";
-
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Header */}
@@ -20,14 +18,13 @@ export default function AboutPage() {
         </p>
       </div>
 
-      {/* CRA Billboard Image - Natural aspect ratio without stretching */}
+      {/* CRA Billboard Image */}
       <div className="mb-12 flex justify-center">
         <div className="w-full max-w-4xl rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-white">
-          <ImageWithFallback 
-            src={billboardImageUrl}
+          <img 
+            src={craBillboardImg}
             alt="CRA - Grow Legally. Grow Proudly." 
             className="w-full h-auto object-contain block"
-            referrerPolicy="no-referrer"
           />
         </div>
       </div>
