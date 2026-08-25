@@ -25,16 +25,12 @@ export default function HomePage() {
         <div className="absolute top-0 left-0 right-0 h-1" style={{ backgroundColor: '#C9A84C' }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 mb-6 px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase"
-              style={{ backgroundColor: 'rgba(201,168,76,0.2)', color: '#C9A84C', border: '1px solid rgba(201,168,76,0.4)' }}>
-              🌿 Official CRA Digital Portal
-            </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               Digital Cannabis Licensing<br />& Information System
             </h1>
             <p className="text-lg mb-8" style={{ color: 'rgba(255,255,255,0.75)' }}>
               Malawi's official portal for cannabis regulation. Apply for licenses,
-              track applications, and stay compliant with our streamlined digital platform.
+              track applications and stay compliant with our streamlined digital platform.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/applicant/new-application">
@@ -56,7 +52,7 @@ export default function HomePage() {
 
       {/* Stats bar */}
       <div style={{ backgroundColor: '#2D6A4F' }} className="text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {[
             { label: 'Licenses Issued', value: '248' },
             { label: 'Active Applicants', value: '1,340+' },
@@ -64,8 +60,8 @@ export default function HomePage() {
             { label: 'Avg. Review Days', value: '14' },
           ].map(s => (
             <div key={s.label}>
-              <div className="text-2xl font-bold" style={{ color: '#C9A84C' }}>{s.value}</div>
-              <div className="text-xs mt-0.5" style={{ color: 'rgba(255,255,255,0.65)' }}>{s.label}</div>
+              <div className="text-2xl font-bold text-white">{s.value}</div>
+              <div className="text-xs mt-0.5 text-white/90 font-medium">{s.label}</div>
             </div>
           ))}
         </div>
@@ -77,7 +73,7 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold mb-3" style={{ color: '#1B4D2E' }}>Why Use DCLIS?</h2>
           <p className="text-gray-500 max-w-2xl mx-auto">
             Our platform simplifies the licensing process with digital applications,
-            real-time tracking, and comprehensive regulatory support.
+            real-time tracking and comprehensive regulatory support.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

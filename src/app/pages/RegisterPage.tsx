@@ -75,10 +75,12 @@ export default function RegisterPage() {
     <div className="min-h-screen bg-gradient-to-br from-[#EBF4EE] to-[#EBF4EE] flex items-center justify-center p-4">
       <Card className="w-full max-w-2xl">
         <CardHeader className="text-center">
-          <div className="flex justify-center mb-4">
-            <div className="bg-[#2D6A4F] p-3 rounded-full">
-              <Leaf className="h-8 w-8 text-white" />
-            </div>
+          <div className="flex justify-center mb-5">
+            <img
+              src="/logo.png"
+              alt="Cannabis Regulatory Authority Logo"
+              className="w-24 h-24 md:w-28 md:h-28 object-contain"
+            />
           </div>
           <CardTitle className="text-2xl font-bold">Create Account</CardTitle>
           <CardDescription>

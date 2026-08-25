@@ -68,6 +68,13 @@ export default function LoginPage() {
     <div className="min-h-[80vh] flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
+          <div className="flex justify-center mb-5">
+            <img
+              src="/logo.png"
+              alt="Cannabis Regulatory Authority Logo"
+              className="w-24 h-24 md:w-28 md:h-28 object-contain"
+            />
+          </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Welcome to DCLIS</h1>
           <p className="text-gray-600">Sign in to access your portal</p>
         </div>

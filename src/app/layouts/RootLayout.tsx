@@ -39,35 +39,25 @@ export default function RootLayout() {
 
       {/* Top notice bar — CRA gold */}
       <div style={{ backgroundColor: '#C9A84C' }} className="text-white text-xs py-1 px-4 text-center font-medium tracking-wide">
-        Cannabis Regulatory Authority of Malawi &nbsp;|&nbsp; Regulating Hemp &amp; Medicinal Cannabis &nbsp;|&nbsp;
+        Cannabis Regulatory Authority &nbsp;|&nbsp; Regulating Hemp &amp; Medicinal Cannabis &nbsp;|&nbsp;
         <a href="tel:+265983436246" className="underline">+265 983 436 246</a>
       </div>
 
-      {/* Main header — CRA deep green */}
-      <header style={{ backgroundColor: '#1B4D2E' }} className="text-white shadow-lg sticky top-0 z-50">
+      {/* Main header — CRA deep green (Sticky across all pages) */}
+      <header style={{ backgroundColor: '#1B4D2E' }} className="text-white shadow-md sticky top-0 z-50 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-3">
+          <div className="flex justify-between items-center py-2.5">
 
-            {/* Logo */}
-            <Link to="/" className="flex items-center space-x-3">
-              <div className="bg-white rounded-lg p-1.5 flex items-center justify-center w-12 h-12 shadow-sm">
-                <img
-                  src="https://cra.mw/img/logo.png"
-                  alt="CRA Logo"
-                  className="w-9 h-9 object-contain"
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).style.display = 'none';
-                    const parent = e.currentTarget.parentElement;
-                    if (parent) parent.innerHTML = '<span style="font-size:22px">🌿</span>';
-                  }}
-                />
-              </div>
-              <div>
-                <div className="font-bold text-lg leading-tight">DCLIS</div>
-                <div className="text-xs leading-tight" style={{ color: '#C9A84C' }}>
-                  Cannabis Regulatory Authority · Malawi
-                </div>
-              </div>
+            {/* Logo only */}
+            <Link to="/" className="flex items-center group py-0.5">
+              <img
+                src="/logo.png"
+                alt="Cannabis Regulatory Authority Logo"
+                className="w-14 h-14 md:w-16 md:h-16 object-contain shrink-0 transition-transform duration-200 group-hover:scale-105"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = "https://cra.mw/img/logo.png";
+                }}
+              />
             </Link>
 
             {/* Desktop Nav */}
@@ -228,14 +218,16 @@ export default function RootLayout() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="bg-white rounded-lg p-1.5 w-10 h-10 flex items-center justify-center">
-                  <img src="https://cra.mw/img/logo.png" alt="CRA" className="w-7 h-7 object-contain"
-                    onError={(e) => { (e.currentTarget as HTMLImageElement).style.display='none'; }} />
-                </div>
+              <div className="flex items-center gap-3.5 mb-4">
+                <img
+                  src="/logo.png"
+                  alt="Cannabis Regulatory Authority Logo"
+                  className="w-16 h-16 object-contain shrink-0"
+                  onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://cra.mw/img/logo.png'; }}
+                />
                 <div>
-                  <div className="font-bold text-base">Cannabis Regulatory Authority</div>
-                  <div className="text-xs" style={{ color: '#C9A84C' }}>Republic of Malawi</div>
+                  <div className="font-bold text-lg text-white">Cannabis Regulatory Authority</div>
+                  <div className="text-xs font-medium" style={{ color: '#C9A84C' }}>Republic of Malawi</div>
                 </div>
               </div>
               <p className="text-sm" style={{ color: 'rgba(255,255,255,0.55)' }}>
@@ -274,7 +266,7 @@ export default function RootLayout() {
             </div>
           </div>
           <div className="mt-8 pt-6 text-center text-xs" style={{ borderTop: '1px solid rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.35)' }}>
-            © 2026 Cannabis Regulatory Authority of Malawi · Digital Cannabis Licensing &amp; Information System
+            © 2026 Cannabis Regulatory Authority · Digital Cannabis Licensing &amp; Information System
           </div>
         </div>
       </footer>

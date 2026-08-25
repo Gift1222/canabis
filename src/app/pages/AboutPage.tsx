@@ -3,33 +3,33 @@ import { Shield, Target, Users, Award } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
 export default function AboutPage() {
-  const buildingImageUrl = "https://res-console.cloudinary.com/dpeudh5sr/thumbnails/transform/v1/image/upload/Y19maWxsLGhfMjAwLHdfMjAw/v1/Q0xTX2R3ZGJpcw==/template_primary";
+  const billboardImageUrl = "/about-us-billboard.jpg";
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Header */}
-      <div className="mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          About the Cannabis Regulatory Authority
+      <div className="mb-8">
+        <h1 className="text-4xl font-bold text-gray-900 mb-2">
+          About Us
         </h1>
+        <h2 className="text-xl font-semibold text-[#1B4D2E] mb-4">
+          Our Mandate
+        </h2>
         <p className="text-lg text-gray-700 leading-relaxed max-w-4xl">
-          The Cannabis Regulatory Authority (CRA) was established to regulate the Cannabis industry
-          as provided for in the Cannabis Regulation Act 2020. The Authority is mandated to license
-          all activities across the Cannabis value chain such as cultivation, processing, distribution,
-          storage, exportation, importation, research, laboratory tests, transportation and medical use
-          of Cannabis. The Cannabis Regulation Act 2020 promotes production of Cannabis only for
-          medicinal, industrial and scientific use and does not in any manner advocate, authorize,
-          promote or legally or socially accept the use of cannabis for recreational uses.
+          Cannabis Regulatory Authority (CRA) is a state corporation established by an Act of Parliament No. 6 of 2020 under the Ministry of Agriculture responsible for regulating and promoting the cultivation, production, processing, storage, distribution and use of cannabis (including <em>C. sativa</em>, <em>C. indica</em> and <em>C. ruderalis</em>) for medicinal, industrial and scientific applications.
         </p>
       </div>
 
-      {/* Hero Image */}
-      <div className="mb-12 rounded-lg overflow-hidden shadow-lg">
-        <ImageWithFallback 
-          src={buildingImageUrl}
-          alt="CRA Office" 
-          className="w-full h-96 object-cover"
-        />
+      {/* CRA Billboard Image - Natural aspect ratio without stretching */}
+      <div className="mb-12 flex justify-center">
+        <div className="w-full max-w-4xl rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-white">
+          <ImageWithFallback 
+            src={billboardImageUrl}
+            alt="CRA - Grow Legally. Grow Proudly." 
+            className="w-full h-auto object-contain block"
+            referrerPolicy="no-referrer"
+          />
+        </div>
       </div>
 
       {/* Vision & Mission */}
@@ -75,7 +75,7 @@ export default function AboutPage() {
             <div className="space-y-4">
               {[
                 'To enforce standards and compliance in the management of cannabis and its products;',
-                'To provide and facilitate marketing, publicity, and communication',
+                'To provide and facilitate marketing, publicity and communication',
               ].map((obj, i) => (
                 <div key={i} className="flex gap-4">
                   <div className="flex-shrink-0 w-8 h-8 bg-[#D5EBD9] rounded-full flex items-center justify-center text-[#1B4D2E] font-bold">
@@ -140,25 +140,18 @@ export default function AboutPage() {
 
       {/* Contact Information */}
       <section className="bg-gray-50 rounded-lg p-8">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div>
-            {/* <h3 className="font-bold mb-2">Headquarters</h3> */}
-            <p className="text-gray-600">
-              Enquiries: +265 983 436 246<br />
-              Toll-Free Line: 4335<br />
-              Email: info@cra.mw<br/>
-              Website: www.cra.mw<br/>
-            </p>
-          </div>
-          {/* <div>
-            { <h3 className="font-bold mb-2">Get in Touch</h3> }
-            <p className="text-gray-600">
-              Email: info@cra.gov.mw<br />
-              Phone: +265 1 234 5678<br />
-              Fax: +265 1 234 5679
-            </p>
-          </div> */}
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">Get in Touch</h2>
+        <div className="space-y-2 text-gray-700">
+          <p className="font-medium text-gray-900">For Enquiries:</p>
+          <p>
+            Email: <a href="mailto:info@cra.mw" className="text-[#1B4D2E] underline underline-offset-2">info@cra.mw</a>
+          </p>
+          <p>
+            Mobile/Whatsapp: <a href="https://wa.me/265983436246" target="_blank" rel="noopener noreferrer" className="hover:underline">+265983436246</a>
+          </p>
+          <p>
+            Operating Hours: Monday-Friday: 7:30AM to 16:30PM
+          </p>
         </div>
       </section>
     </div>
