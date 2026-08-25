@@ -70,12 +70,13 @@ export default function AboutPage() {
         <Card>
           <CardContent className="pt-6">
             <p className="text-gray-600 mb-6">
-              In the medium-term, CRA aims to achieve the following key strategic objectives:
+              In the medium term, CRA aims to achieve the following key strategic objectives:
             </p>
             <div className="space-y-4">
               {[
-                'To enforce standards and compliance in the management of cannabis and its products;',
-                'To provide and facilitate marketing, publicity and communication',
+                'To enforce standards and compliance in the management of cannabis and cannabis products;',
+                'To provide and facilitate marketing, publicity, and communication services; and',
+                'To provide efficient and effective Corporate Governance of CRA.',
               ].map((obj, i) => (
                 <div key={i} className="flex gap-4">
                   <div className="flex-shrink-0 w-8 h-8 bg-[#D5EBD9] rounded-full flex items-center justify-center text-[#1B4D2E] font-bold">

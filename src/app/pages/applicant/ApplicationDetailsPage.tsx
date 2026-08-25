@@ -21,9 +21,11 @@ import { ApplicationStatus } from '../../types';
 import { toast } from 'sonner';
 
 export default function ApplicationDetailsPage() {
-  const { id } = useParams();
+  const params = useParams();
+  const rawId = params['*'] || params.id || '';
+  const decodedId = decodeURIComponent(rawId);
   const navigate = useNavigate();
-  const application = mockApplications.find(app => app.id === id);
+  const application = mockApplications.find(app => app.id === rawId || app.id === decodedId);
 
   if (!application) {
     return (

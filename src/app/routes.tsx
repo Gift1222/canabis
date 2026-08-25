@@ -40,7 +40,7 @@ export const router = createBrowserRouter([
         element: <ProtectedRoute><NewApplicationPage /></ProtectedRoute>
       },
       { 
-        path: "applicant/application/:id", 
+        path: "applicant/application/*", 
         element: <ProtectedRoute><ApplicationDetailsPage /></ProtectedRoute>
       },
       
@@ -54,7 +54,7 @@ export const router = createBrowserRouter([
         element: <ProtectedRoute requireAdmin><AdminApplicationsPage /></ProtectedRoute>
       },
       { 
-        path: "admin/application/:id", 
+        path: "admin/application/*", 
         element: <ProtectedRoute requireAdmin><AdminApplicationReviewPage /></ProtectedRoute>
       },
       { 

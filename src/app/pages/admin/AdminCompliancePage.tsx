@@ -244,7 +244,7 @@ export default function AdminCompliancePage() {
                   <div>
                     <h4 className="font-medium mb-1">Record Keeping</h4>
                     <p className="text-sm text-gray-600">
-                      Maintain accurate records of all inventory, transactions, and waste disposal for at least 3 years.
+                      Maintain accurate records of all inventory, transactions and waste disposal for at least 3 years.
                     </p>
                   </div>
                 </div>

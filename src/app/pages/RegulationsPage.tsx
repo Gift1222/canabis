@@ -88,7 +88,7 @@ export default function RegulationsPage() {
                   <p className="text-gray-600">
                     Both Malawian citizens and foreign investors can apply for cannabis licenses. 
                     Applicants must be 18 years or older, have a registered business entity in Malawi, 
-                    meet all financial requirements, and pass background checks. Foreign applicants 
+                    meet all financial requirements and pass background checks. Foreign applicants 
                     may be subject to additional requirements including local partnership provisions.
                   </p>
                 </AccordionContent>
@@ -100,7 +100,7 @@ export default function RegulationsPage() {
                   <p className="text-gray-600">
                     All cannabis facilities must implement comprehensive security measures including: 
                     24/7 video surveillance with 90-day retention, intrusion detection systems, 
-                    secure access control, adequate lighting, perimeter fencing for outdoor facilities, 
+                    secure access control, adequate lighting, perimeter fencing for outdoor facilities 
                     and alarm systems monitored by licensed security companies. Regular security audits 
                     are required.
                   </p>
@@ -112,7 +112,7 @@ export default function RegulationsPage() {
                 <AccordionContent>
                   <p className="text-gray-600">
                     Processing times vary by license type: Research licenses typically take 3-4 weeks, 
-                    Cultivation and Retail licenses 4-6 weeks, Processing licenses 6-8 weeks, and 
+                    Cultivation and Retail licenses 4-6 weeks, Processing licenses 6-8 weeks and 
                     Export licenses 8-10 weeks. These are estimates assuming complete applications. 
                     Incomplete applications will experience delays.
                   </p>
@@ -124,8 +124,8 @@ export default function RegulationsPage() {
                 <AccordionContent>
                   <p className="text-gray-600">
                     All cannabis products must meet strict quality standards including testing for 
-                    potency, contaminants (pesticides, heavy metals, microbiological), and proper 
-                    labeling with cannabinoid content, batch numbers, and expiry dates. Processing 
+                    potency, contaminants (pesticides, heavy metals, microbiological) and proper 
+                    labeling with cannabinoid content, batch numbers and expiry dates. Processing 
                     facilities must comply with Good Manufacturing Practices (GMP). Third-party 
                     laboratory testing is mandatory.
                   </p>
@@ -140,7 +140,7 @@ export default function RegulationsPage() {
                     minors, make health claims without scientific evidence, or use imagery that 
                     glamorizes consumption. All advertising must include health warnings and be 
                     approved by the CRA before publication. Advertising is prohibited on television, 
-                    radio, and near schools.
+                    radio and near schools.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -151,7 +151,7 @@ export default function RegulationsPage() {
                   <p className="text-gray-600">
                     Cultivation operations must conduct Environmental Impact Assessments (EIA), 
                     implement water conservation measures, use approved pesticides sparingly, 
-                    manage waste properly, prevent soil degradation, and protect local ecosystems. 
+                    manage waste properly, prevent soil degradation and protect local ecosystems. 
                     Indoor facilities must meet energy efficiency standards. Regular environmental 
                     compliance audits are conducted.
                   </p>
@@ -165,7 +165,7 @@ export default function RegulationsPage() {
                     All cannabis licenses must be renewed annually. License holders should submit 
                     renewal applications at least 60 days before the expiry date. Renewal requires 
                     demonstrating continued compliance, updated documentation, payment of renewal 
-                    fees, and may involve facility re-inspection. Late renewals may incur penalties.
+                    fees and may involve facility re-inspection. Late renewals may incur penalties.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -198,9 +198,9 @@ export default function RegulationsPage() {
             regulatory affairs department:
           </p>
           <div className="space-y-2 text-gray-700">
-            <p><strong>Email:</strong> regulations@cra.gov.mw</p>
-            <p><strong>Phone:</strong> +265 1 234 5678 (Ext. 301)</p>
-            <p><strong>Office Hours:</strong> Monday - Friday, 8:00 AM - 5:00 PM</p>
+            <p><strong>Email:</strong> <a href="mailto:info@cra.mw" className="text-[#1B4D2E] hover:underline">info@cra.mw</a></p>
+            <p><strong>Mobile/Whatsapp:</strong> <a href="tel:+265983436246" className="text-[#1B4D2E] hover:underline">+265983436246</a></p>
+            <p><strong>Operating Hours:</strong> Monday-Friday: 7:30AM to 16:30PM</p>
           </div>
         </CardContent>
       </Card>

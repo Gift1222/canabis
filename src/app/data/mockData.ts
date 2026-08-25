@@ -26,7 +26,7 @@ export const adminUser: User = {
 
 export const mockApplications: LicenseApplication[] = [
   {
-    id: 'APP-2026-001',
+    id: 'CRA/06-2021/001',
     applicantId: 'user-001',
     applicantName: 'John Banda',
     licenseType: 'cultivate-sale-medicinal',
@@ -66,7 +66,7 @@ export const mockApplications: LicenseApplication[] = [
     paymentAmount: 8500
   },
   {
-    id: 'APP-2026-002',
+    id: 'CRA/06-2021/002',
     applicantId: 'user-002',
     applicantName: 'Sarah Mwale',
     licenseType: 'process-medicinal',
@@ -104,7 +104,7 @@ export const mockApplications: LicenseApplication[] = [
     licenseNumber: 'CRA-PROC-2026-002'
   },
   {
-    id: 'APP-2026-003',
+    id: 'CRA/06-2021/003',
     applicantId: 'user-003',
     applicantName: 'James Kamanga',
     licenseType: 'medical-research-medicinal',
@@ -136,7 +136,7 @@ export const mockApplications: LicenseApplication[] = [
     paymentAmount: 850
   },
   {
-    id: 'APP-2026-004',
+    id: 'CRA/06-2021/004',
     applicantId: 'user-004',
     applicantName: 'Peter Nkhoma',
     licenseType: 'import-export',
@@ -206,7 +206,7 @@ export const mockAnnouncements: Announcement[] = [
 export const mockInspections: ComplianceInspection[] = [
   {
     id: 'insp-001',
-    licenseId: 'APP-2026-002',
+    licenseId: 'CRA/06-2021/002',
     licensee: 'Shire Valley Cannabis Processing',
     inspectionDate: '2026-03-01',
     inspector: 'Inspector M. Banda',
@@ -216,7 +216,7 @@ export const mockInspections: ComplianceInspection[] = [
   },
   {
     id: 'insp-002',
-    licenseId: 'APP-2026-001',
+    licenseId: 'CRA/06-2021/001',
     licensee: 'Malawi Green Farms Ltd',
     inspectionDate: '2026-04-15',
     inspector: 'Inspector L. Chirwa',

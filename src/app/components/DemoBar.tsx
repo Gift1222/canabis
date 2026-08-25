@@ -42,7 +42,7 @@ const PERSONAS: DemoPersona[] = [
     quickLinks: [
       { label: 'My Dashboard', path: '/applicant/dashboard', icon: LayoutDashboard },
       { label: 'New Application', path: '/applicant/new-application', icon: Plus },
-      { label: 'Application #001', path: '/applicant/application/APP-2026-001', icon: FileText },
+      { label: 'Application #001', path: '/applicant/application/CRA/06-2021/001', icon: FileText },
       { label: 'Home', path: '/', icon: Home },
     ],
   },

@@ -46,7 +46,7 @@ const LICENCES = [
     title: 'Process',
     icon: FlaskConical,
     description:
-      'Licence to process raw cannabis material into finished or semi-finished products including extraction, drying, packaging, and manufacturing.',
+      'Licence to process raw cannabis material into finished or semi-finished products including extraction, drying, packaging and manufacturing.',
     processingTime: '30–45 working days',
     requirements: [
       'Certified processing facility with GMP compliance',
@@ -66,7 +66,7 @@ const LICENCES = [
     title: 'Distribute (Transport, Wholesale & Retail)',
     icon: Truck,
     description:
-      'Licence covering the distribution of cannabis products — including transportation, wholesale supply to businesses, and retail sale to authorised end users.',
+      'Licence covering the distribution of cannabis products — including transportation, wholesale supply to businesses and retail sale to authorised end users.',
     processingTime: '21–30 working days',
     requirements: [
       'Approved distribution or retail premises',
@@ -140,7 +140,7 @@ const PERMITS = [
     title: 'Stock, Sell & Distribute Cannabis Drugs',
     icon: ShoppingBag,
     description:
-      'Permit for pharmacies to stock, dispense, and distribute approved cannabis pharmaceutical products to patients.',
+      'Permit for pharmacies to stock, dispense and distribute approved cannabis pharmaceutical products to patients.',
     tiers: [
       { label: 'Private Pharmacies',     fee: '$170' },
       { label: 'Government Pharmacies',  fee: '$85'  },
@@ -164,7 +164,7 @@ const PERMITS = [
     title: 'Conduct Breeding & Agronomy Research',
     icon: Sprout,
     description:
-      'Permit to conduct plant breeding, variety development, and agronomy field research on cannabis crops.',
+      'Permit to conduct plant breeding, variety development and agronomy field research on cannabis crops.',
     tiers: [
       { label: 'Medicinal Cannabis', fee: '$850' },
       { label: 'Industrial Hemp',    fee: '$600' },
@@ -348,19 +348,24 @@ export default function LicenseTypesPage() {
       {/* Hero header */}
       <div style={{ background: 'linear-gradient(135deg, #1B4D2E 0%, #2D6A4F 100%)' }} className="text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold mb-4">
+          <div className="max-w-3xl mx-auto mb-12">
+            <h1 className="text-4xl font-bold mb-4 text-justify">
               Fees Schedule Licensing & Permit Fees
             </h1>
-            <p className="text-xl max-w-3xl mx-auto" style={{ color: 'rgba(255,255,255,0.85)' }}>
-              Fees for licenses and permits are dependent on the type of Cannabis enterprise.
-              The licenses are awarded for each activity such as cultivation, processing, storage and
-              distribution while permits are given on exportation, importation, research and laboratory tests.
-              <br/>
-              Licenses, including research and laboratory tests permits are valid for a period of twelve months after which it may be
-              renewed for another period as may be prescribed by the registrar. Import and export permits are valid
-              for a period not exceeding four months. The fees are structured as follows:
-            </p>
+            <div className="text-xl space-y-3 text-justify" style={{ color: 'rgba(255,255,255,0.85)' }}>
+              <p>
+                Fees for licences and permits depend on the type of entity and the activity being undertaken.
+                Licences are issued for specific activities, including cultivation and Sell, Processing, Storage and
+                Distribution (Transport, Wholesale and Retail). Permits are issued for activities such as importation,
+                exportation, research and laboratory testing.
+              </p>
+              <p>
+                Licences are valid for 12 (Twelve) months. Import and export permits are valid for a period not exceeding 4 (Four) months.
+              </p>
+              <p>
+                The applicable fees are structured as follows:
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -388,7 +393,7 @@ export default function LicenseTypesPage() {
             <h2 className="text-2xl font-bold" style={{ color: '#1B4D2E' }}>Permit Fees Schedule</h2>
           </div>
           <p className="text-sm text-gray-500 mb-7 ml-4">
-            Permits for specific regulated activities including medical use, research, laboratory testing, and import/export.
+            Permits for specific regulated activities including medical use, research, laboratory testing and import/export.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
             {PERMITS.map(item => <PermitCard key={item.id} item={item} />)}

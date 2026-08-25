@@ -23,9 +23,11 @@ import {
 import { mockApplications, getLicenseDisplayName, licenseTypeInfo } from '../../data/mockData';
 
 export default function AdminApplicationReviewPage() {
-  const { id } = useParams();
+  const params = useParams();
+  const rawId = params['*'] || params.id || '';
+  const decodedId = decodeURIComponent(rawId);
   const navigate = useNavigate();
-  const application = mockApplications.find(app => app.id === id);
+  const application = mockApplications.find(app => app.id === rawId || app.id === decodedId);
   
   const [reviewNotes, setReviewNotes] = useState(application?.reviewNotes || '');
   const [isProcessing, setIsProcessing] = useState(false);
