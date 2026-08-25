@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Shield, Target, Users, Award } from 'lucide-react';
-import craBillboardImg from '@/assets/images/cra_billboard_1787643257648.jpg';
+import craBillboardImg from '@/assets/images/about-us-billboard.jpg';
 
 export default function AboutPage() {
   return (
